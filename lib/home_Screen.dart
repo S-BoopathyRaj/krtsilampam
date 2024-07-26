@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:krtsilampam/Achiement/Achevement.dart';
 import 'package:krtsilampam/Histroy/histroy.dart';
-
- // Import the file where your History screen is defined
+import 'package:krtsilampam/main.dart'; // Import your LoginPage
 
 class home_Screen extends StatefulWidget {
   @override
@@ -91,6 +90,16 @@ class _HomeScreenState extends State<home_Screen> {
                 );
               },
             ),
+  
+            ListTile(
+              title: Text('Achievement'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Achevement()),
+                );
+              },
+            ),
             ListTile(
               title: Text('Team'),
               onTap: () {
@@ -112,7 +121,10 @@ class _HomeScreenState extends State<home_Screen> {
             ListTile(
               title: Text('Log Out'),
               onTap: () {
-                // Handle item tap
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyApp()),
+                );
               },
             ),
           ],

@@ -1,35 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:krtsilampam/Achiement/Achevement.dart';
+import 'package:krtsilampam/Histroy/histroy.dart';
 import 'package:krtsilampam/Histroy/nextpage.dart';
 import 'package:krtsilampam/main.dart';
 
-class HistoryPage extends StatefulWidget {
+class Achevement extends StatefulWidget {
   @override
   _HistoryPageState createState() => _HistoryPageState();
 }
 
-class _HistoryPageState extends State<HistoryPage> {
+class _HistoryPageState extends State<Achevement> {
   int _selectedIndex = 0;
 
   // List of widgets for different pages
   static const List<Widget> _widgetOptions = <Widget>[
     Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'History of KRD',
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              'Achievement of KRD',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              '2022 ஆம் ஆண்டு தமிழ்ப் புத்தாண்டில் 22 வயது இளைஞரால் துவங்கப்பட்ட தமிழ்மண்ணின் பாரம்பரியக் கலைக் குழுவாக STEELCITY MARTIAL ART\'S of SILAMBAM என்ற பெயரில் சிறியதொரு அளவில் தன்நம்பிக்கையுடன் துவங்கப்பட்டது.\n\n'
-              'பின் ஒரு சில மாதங்களில் K.R.D என்ற மூத்தோர்களின் பெயரை ஆசியாக கொண்டு அடுத்த ஒண்கட்ட நிலைக்கு காலடி தடம் படைக்க முயற்சிகள்.\n\n'
-              'கையான ஆயத்தமாக்கபட்டது ம்போ ALCOHOTO 3 சேளம் மாவட்ட சிலம்ப நட்சத்திர வீரம், தலைசிறந்த ஆசாம் ஆனதிரு. நடராஸ்.கே. அவர்களின் மூத்த மாணவன் என்ற பெரும்ப 10. தண்நம்பிக்கையுயன் திரு. சீனிவாசன் அவர்கள் சிளம்ப கலை (பயிற்சியின் தலைமை பயிற்சியாளராக விட் ஒப்போ கொண்டார்.',
+            SizedBox(height: 16), // Adds space between the title and the content
+            Text(
+              '2023 ஆம் ஆண்டு பள்ளி கல்வி கறையின் சர்பாக நடைபெற்ற '
+              '*கனிஷ்கா மித்ரா 2.முருகன் பதக்கத்தை '
+              '2002 ஆம் பட சிலம்பாட்ட மாணவி '
+              'செல்க '
+              '* 2028 ஆம் '
+              'SILAMBAM '
+              'பதக்கம், '
+              '18 '
+              'P: பதக்கத்தையும் '
+              'திதி: நவமி '
+              'CLUBG '
+              'து '
+              'போட்டியில் '
+              'மாணவி '
+              'அவர்கள் வெள்ளி '
+              'தன்வசபடுத்தினார் '
+              'ஆண்டு சேலம் மாவட்ட போட்டியில் மருத்துவ சிறையில் பயிலும் வர்ஷா% '
+              'தாமரை செல்வி அவர்கள் வெள்ளி படிகத்தை தன்படுத்தினார் '
+              'ஆண்டு ஏற்காட்டில் நடைபெற்ற CHAMPION போட்டியில் 34 உங்6 '
+              'வெள்ளி பதக்கம் 3 7 வெண்கள் வெண்றார்கள் '
+              'ind '
+              '2005 ஆம் ஆண்டு நடைபெற்ற INTRA போட்டியில் 1 முதலிடம், 6 இரண்டாம் '
+              'இடம், 2 மூன்றாம் இடமும் வென்றார்கள் '
+              'மம் · உக்கிரம் ஹஸ்ம்',
               textAlign: TextAlign.justify,
               style: TextStyle(
                 fontSize: 19,
@@ -38,8 +57,8 @@ class _HistoryPageState extends State<HistoryPage> {
                 height: 1.5, // Line height for better readability
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     ),
   ];
@@ -54,7 +73,7 @@ class _HistoryPageState extends State<HistoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('History Of KRD'),
+        title: Text('Achievement Of KRD'),
         centerTitle: true,
         backgroundColor: Colors.blue,
         actions: <Widget>[
@@ -108,13 +127,13 @@ class _HistoryPageState extends State<HistoryPage> {
                 // Handle item tap
               },
             ),
-            ListTile(
+          ListTile(
               title: Text('History'),
               onTap: () {
-                Navigator.pop(context); // Close the drawer
-                setState(() {
-                  _selectedIndex = 0; // Switch to the History tab
-                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryPage()),
+                );
               },
             ),
              ListTile(
